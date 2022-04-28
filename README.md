@@ -1,6 +1,6 @@
 # SKELETON
 
-Skeleton is a CALDERA plugin template
+Dummy is a CALDERA plugin template
 
 Run the `plugin-init.py` script to easily create a new plugin
 

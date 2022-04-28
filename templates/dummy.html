@@ -1,7 +1,4 @@
-<link rel="stylesheet" href="/skeleton/css/skeleton.css">
-<script src="/skeleton/js/skeleton.js"></script>
-
-<div x-data="alpineSkeleton()" x-init="initPage()">
+<div x-data="alpineDummy()" x-init="initPage()">
     <div>
         <h2 x-text="name"></h2>
         <p x-text="description"></p>
@@ -9,7 +6,7 @@
     <hr>
     <div>
         <button class="button is-primary is-small" @click="sampleFunction()">Click Me</button>
-        <p x-text="sampleVariable"></p>
+        <p class="mt-3" x-text="sampleVariable"></p>
     </div>
 </div>
 
@@ -20,7 +17,7 @@
   Read up on the docs before you get started working on the UI: https://alpinejs.dev/
 */
 
-function alpineSkeleton() {
+function alpineDummy() {
     return {
         name: '{{ name }}',
         description: '{{ description }}',
@@ -44,5 +41,5 @@ function alpineSkeleton() {
     };
 }
 
-// # sourceURL=skeleton.js
+// # sourceURL=dummy.js
 </script>

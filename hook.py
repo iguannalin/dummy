@@ -1,20 +1,20 @@
 from app.utility.base_world import BaseWorld
-from plugins.skeleton.app.skeleton_gui import SkeletonGUI
-from plugins.skeleton.app.skeleton_api import SkeletonAPI
+from plugins.dummy.app.dummy_gui import DummyGUI
+from plugins.dummy.app.dummy_api import DummyAPI
 
-name = 'Skeleton'
-description = 'description'
-address = '/plugin/skeleton/gui'
+name = 'Dummy'
+description = 'dummy plugin to test vue app'
+address = '/plugin/dummy/gui'
 access = BaseWorld.Access.RED
 
 
 async def enable(services):
     app = services.get('app_svc').application
-    skeleton_gui = SkeletonGUI(services, name=name, description=description)
-    app.router.add_static('/skeleton', 'plugins/skeleton/static/', append_version=True)
-    app.router.add_route('GET', '/plugin/skeleton/gui', skeleton_gui.splash)
+    dummy_gui = DummyGUI(services, name=name, description=description)
+    app.router.add_static('/dummy', 'plugins/dummy/static/', append_version=True)
+    app.router.add_route('GET', '/plugin/dummy/gui', dummy_gui.splash)
 
-    skeleton_api = SkeletonAPI(services)
+    dummy_api = DummyAPI(services)
     # Add API routes here
-    app.router.add_route('POST', '/plugin/skeleton/mirror', skeleton_api.mirror)
+    app.router.add_route('POST', '/plugin/dummy/mirror', dummy_api.mirror)
 
